@@ -1,0 +1,174 @@
+:root
+{
+  --red: #ee0c0c; /* cor do pontinho no final do nome da loja */
+}
+
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;          /* como isso as linhas somen */
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html
+{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+section
+{
+  padding: 2rem 9%;
+}
+
+header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* e com isso todos  items  ficam centralizados home , about, products, review, contact */
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba( 0,  0, 0, .1);  /* bordar sombreada navBar*/
+}
+ 
+header .logo
+{
+  font-size: 3rem;  
+  color: #333;
+  font-weight: bolder;         /*  borda do nome da loja */
+}
+
+header .logo span
+{
+  color: var(--red); /*hover dos nome do nav bar */
+}
+
+header .navbar a
+{
+  font-size: 2rem;
+  padding: 0 1.5rem; /* espaçamento entre os nomes do menu navBar */
+  color: rgb(105, 106, 117); /*cor dos nome  do  navBar */
+}
+
+header .navbar a:hover
+{
+  color: var(--red); /*hover do  nab bar, nomes */
+}
+
+header .icons a
+{
+     font-size: 2.5rem; /* tamanho dos icons */
+     color: rgb(7, 7, 7); /* comor do icons */
+     margin-left: 1rem; /* espaçamento entre os icons  */
+}    
+
+header .icons a:hover
+{
+  color: var(--red);/*hover icons */
+}
+
+header #toggler
+{
+  display: none;
+}
+
+header .fa-bars
+{
+  font-size: 3rem; /* tamanho do icon 3 barrinha */
+  color: #ee0c0c; /*cor das 3 barrinha */
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border:  .1rem solid rgba(0, 0, 0, 0.3);
+  display: none; /* as 3 barrinha so aparece na responsividade  */
+}
+
+.home
+{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: url(../img/img0.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content
+{
+  max-width: 50rem;
+}
+
+.home .content h3
+{
+  font-size: 3.5rem;
+  color: #333;
+
+}
+
+
+
+
+@media ( max-width:991px ) {
+
+         html
+       {
+                  font-size: 55%;
+                 
+             }
+             header { 
+               padding: 2rem;
+             }
+}
+
+  @media  ( max-width:768px ) {
+
+    html .fa-bars {
+      display: block;
+    }
+    header .navbar {
+      position: absolute;
+      top: 100%; left: 0; right: 0; /* trabalhando no menu lateral */
+      background: #eee;
+      border-top:  .1rem solid rgba(0, 0, 0.1);
+      clip-path: polygon(0 0, 100% 0, 100% 0,  0 0); /* pros block de nomes sumirem e ficar so o icon 3 barrinha ea responsividade vim*/
+    }
+
+
+    header  #toggler:checked ~ .navbar 
+    {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* ao clikar nas 3 barrinha o block de nomes vem */
+
+    }
+
+    header .navbar a /* configuração menu laretal */
+    {
+      margin: 1.5rem;
+      padding: 1.5rem;
+      background: #fff; /*cor de fundo dos nome do menu lateral */
+      border: .1rem solid rgba( 0,  0, 0, .1); /*cor dos nomes */
+      display: block;  /* os nomes ficam  en  colunas separadas en block */
+    }
+    
+  }
+
+  @media ( max-width:450px ) {
+
+    html {
+  
+             font-size: 50%;
+            
+        }
+}
